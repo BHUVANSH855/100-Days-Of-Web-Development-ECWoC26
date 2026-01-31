@@ -1111,6 +1111,16 @@
         <p>Maintained by <span>Subham</span> ❤️</p>
       </div>
     </footer>
+        <!-- Scroll To Top Button -->
+    <button
+      id="scrollToTopBtn"
+      class="scroll-to-top"
+      aria-label="Scroll to top"
+      title="Back to top"
+    >
+      ↑
+    </button>
+
 
     <!-- Scripts -->
     <script src="website/scripts/components/cursor.js"></script>
@@ -1145,6 +1155,25 @@
           document.body.classList.add('light-theme');
         }
       });
+      // Scroll To Top Button Logic
+      const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+          
+      if (scrollToTopBtn) {
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 300) {
+            scrollToTopBtn.classList.add("show");
+          } else {
+            scrollToTopBtn.classList.remove("show");
+          }
+        });
+      
+        scrollToTopBtn.addEventListener("click", () => {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
+        });
+      }
     </script>
   </body>
 </html>
